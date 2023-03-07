@@ -28,14 +28,15 @@ type HelloWorldSpec struct {
 	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
 
-	// Foo is an example field of HelloWorld. Edit helloworld_types.go to remove/update
-	Foo string `json:"foo,omitempty"`
+	//对应crd自定义字段 spec.size
+	Size int32 `json:"size"`
 }
 
 // HelloWorldStatus defines the observed state of HelloWorld
 type HelloWorldStatus struct {
 	// INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
 	// Important: Run "make" to regenerate code after modifying this file
+	Nodes []string `json:"nodes"`
 }
 
 //+kubebuilder:object:root=true
